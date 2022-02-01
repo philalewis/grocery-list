@@ -1,14 +1,21 @@
 import React from 'react'
 import './Card.css'
 
-const Card = ({ id, name, quantity, unit }) => {
+const Card = ({ id, name, quantity, unit, deleteItem }) => {
   const capitalize = (string) => {
     return string[0].toUpperCase() + string.slice(1)
   }
 
+  const toggleStrikeThrough = event => {
+    event.target.classList.toggle('done')
+  }
+
   return (
     <li className="card">
-      <p><b>{capitalize(name)}</b>: {quantity} {unit}</p>
+      <p onClick={event => toggleStrikeThrough(event)}>
+        <b>{capitalize(name)}</b>: {quantity} {unit}
+      </p>
+      <button className="delete" onClick={() => deleteItem(id)}>X</button>
     </li>
   )
 }

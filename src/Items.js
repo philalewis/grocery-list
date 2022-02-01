@@ -2,7 +2,7 @@ import React from 'react'
 import './Items.css'
 import Card from './Card'
 
-const Items = ({ items }) => {
+const Items = ({ items, deleteItem }) => {
   const listItems = items.map(item => {
     return (
       <Card
@@ -11,6 +11,7 @@ const Items = ({ items }) => {
         name={item.name}
         quantity={item.quantity}
         unit={item.unit}
+        deleteItem={deleteItem}
       />
     )
   })

@@ -7,3 +7,15 @@
 p {
   margin: 2px;
 }
+
+.done {
+  text-decoration: line-through;
+}
+
+.delete {
+  border: none;
+  background-color: white;
+  position: fixed;
+  right: 0;
+  color: red;
+}

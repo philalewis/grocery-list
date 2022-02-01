@@ -18,6 +18,11 @@ class App extends Component {
     }
   }
 
+  deleteItem = id => {
+    const filteredItems = this.state.items.filter(item => item.id !== id)
+    this.setState({ items: filteredItems })
+  }
+
   addItem = newItem => {
     this.setState({ items: [...this.state.items, newItem] })
   }
@@ -28,7 +33,7 @@ class App extends Component {
         <h1>Grocery List</h1>
         <Form addItem={this.addItem} />
         { !this.state.items.length && <h2>There are currently no items on the list</h2>}
-        <Items items={this.state.items} />
+        <Items items={this.state.items} deleteItem={this.deleteItem} />
       </main>
     )
   }
