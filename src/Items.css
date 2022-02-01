@@ -1,0 +1,13 @@
+.items-container {
+  /* padding: 20px; */
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  grid-gap: 5px;
+  align-items: center;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
