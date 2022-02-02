@@ -7,7 +7,7 @@ const Card = ({ id, name, quantity, unit, deleteItem }) => {
   }
 
   const toggleStrikeThrough = event => {
-    event.target.classList.toggle('done')
+    event.target.parentNode.classList.toggle('done')
   }
 
   return (
